@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator } from './functions';
+import { capitalize, reverseString, calculator, caesarCipher } from './functions';
 
 describe('capitalize', () => {
 	test('returns string capitalized', () => {
@@ -56,9 +56,22 @@ describe('calculator', () => {
 		expect(calculator.divide(5, 10)).toBe(0.5);
 		expect(calculator.divide(3, 3)).toBe(1);
 	});
-  // test('returns result from adding two numbers', () => {
-	// 	expect(calculator.add(5, 5)).toBe(10);
-	// 	expect(calculator.add(-5, 5)).toBe(0);
-	// 	expect(calculator.add(3, 3)).toBe(6);
-	// });
+  test('returns result from multiplying two numbers', () => {
+		expect(calculator.multiply(5, 5)).toBe(25);
+		expect(calculator.multiply(-5, 5)).toBe(-25);
+		expect(calculator.multiply(3, 3)).toBe(9);
+	});
+  test('throws error for invalid inputs', () => {
+    expect(() => calculator.add('potato', undefined)).toThrow()
+    expect(() => calculator.subtract('null', null)).toThrow()
+    expect(() => calculator.divide('ojnasdf', '@3049;;')).toThrow()
+    expect(() => calculator.add('potato', undefined)).toThrow()
+    
+  })
 });
+
+describe('caesarCipher', () => {
+  test('rotate letters in a string', () => {
+    expect(caesarCipher('xyz')).toBe('abc');
+  })
+})
