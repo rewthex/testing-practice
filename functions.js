@@ -34,6 +34,8 @@ export const calculator = {
 };
 
 export const caesarCipher = (string, times) => {
+	if (typeof string !== 'string' || typeof times !== 'number')
+		throw new TypeError('Input must be a string and number!');
 	const alphabetLower = 'abcdefghijklmnopqrstuvwxyz';
 	const alphabetUpper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 	let newString = '';
@@ -53,4 +55,15 @@ export const caesarCipher = (string, times) => {
 	return newString;
 };
 
-console.log(caesarCipher('Hello, World!', 3));
+export const analyzeArray = (array) => {
+	const sorted = array.slice().sort();
+
+	const length = sorted.length;
+	const average = sorted.reduce((acc, cur) => acc + cur, 0) / length;
+	const min = sorted[0];
+	const max = sorted[length - 1];
+
+	return { average, min, max, length };
+};
+
+console.log(analyzeArray([1, 8, 3, 4, 2, 6]));
