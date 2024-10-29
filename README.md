@@ -2,7 +2,7 @@
 
 This was completed for The Odin Project (https://www.theodinproject.com/lessons/node-path-javascript-testing-practice).
 
-The lesson taught me all about how about the Test Driven Development methodology for developing. The idea is to first write tests for what you're trying to accomplish, and then write the code to pass those tests.
+The lesson taught me about the Test Driven Development methodology. The idea is to first write tests for what you're trying to accomplish, and then write the code to pass those tests, repeating this process over and over.
 
 The project was completed using Jest. Jest is a javascript development framework that uses simple syntax that reads like English.
 
