@@ -56,8 +56,12 @@ export const caesarCipher = (string, times) => {
 };
 
 export const analyzeArray = (array) => {
-	const sorted = array.slice().sort();
+	const isNumber = (value) => typeof value === 'number';
 
+	if (!array || array.length < 1 || !array.every(isNumber))
+		throw new TypeError('Input must be an array of numbers!')
+	
+	const sorted = array.slice().sort();
 	const length = sorted.length;
 	const average = sorted.reduce((acc, cur) => acc + cur, 0) / length;
 	const min = sorted[0];
@@ -65,5 +69,3 @@ export const analyzeArray = (array) => {
 
 	return { average, min, max, length };
 };
-
-console.log(analyzeArray([1, 8, 3, 4, 2, 6]));

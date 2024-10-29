@@ -100,6 +100,22 @@ describe('analyzeArray', () => {
 		expect(analyzeArray([1, 2, 3])).toBeInstanceOf(Object);
 	});
 	test('returns average', () => {
-		expect(analyzeArray([1,8,3,4,2,6]).average).toBe(4);
-	})
+		expect(analyzeArray([1, 8, 3, 4, 2, 6]).average).toBe(4);
+	});
+	test('returns min', () => {
+		expect(analyzeArray([1, 8, 3, 4, 2, 6]).min).toBe(1);
+	});
+	test('returns max', () => {
+		expect(analyzeArray([1, 8, 3, 4, 2, 6]).max).toBe(8);
+	});
+	test('returns length', () => {
+		expect(analyzeArray([1, 8, 3, 4, 2, 6]).length).toBe(6);
+	});
+	test('throws error for invalid inputs', () => {
+		expect(() => analyzeArray([])).toThrow();
+		expect(() => analyzeArray(null)).toThrow();
+		expect(() => analyzeArray([1,2,'yam'])).toThrow();
+		expect(() => analyzeArray([null, undefined, 'taco'])).toThrow();
+	});
+	
 });
